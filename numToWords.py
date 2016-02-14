@@ -77,11 +77,15 @@ def numToWords(inputNum):
 	elif num > 1000000:
 		print("Input too big!")
 
+# Comment out this part if numToWors fxn will be used
+'''
 inputNum = input("Enter a number from 0 to 1000000: ")
 numToWords(inputNum)
+'''
 
 #######################################################
 
+'''
 # Numbers in ones place and special nums
 ones = ["zero": 0,
 		"one": 1,
@@ -115,6 +119,7 @@ tens = ["ten": 10,
 # Numbers with thousand / million
 others = ["thousand": 1000,
 		"million": 1000000]
+'''
 
 def wordsToNum(word):
 	"This function converts an input word to its corresponding number form."
@@ -136,5 +141,24 @@ def wordsToCurrency(word, currency):
 	
 #######################################################
 
-def numberDelimited():
+def numberDelimited(num, delimiter, steps):
+	"This function uses a delimiter to split numbers in an input."
 	
+	number = str(num)
+	result = ""
+	i = 0
+	jump = len(number)-steps
+	
+	while(i<len(number)):
+		
+		if(i == jump):
+			result = delimiter + number
+		
+		i = i + 1
+	
+	print result
+
+num = input("Enter a number: ")
+#delimiter = input("Enter a delimiter: ")
+steps = input("Enter number of steps: ")
+numberDelimited(num, ",", steps)
